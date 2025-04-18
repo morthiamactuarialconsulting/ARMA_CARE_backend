@@ -57,7 +57,6 @@ public class Professional {
     // Statut du compte
     public enum AccountStatus {
         PENDING_VERIFICATION, // En attente de vérification des documents
-        PENDING_ACTIVATION,   // Documents vérifiés, en attente d'activation
         ACTIVE,               // Compte actif et utilisable
         SUSPENDED,            // Compte temporairement suspendu
         INACTIVE              // Compte inactif (ex: retraite, décès)

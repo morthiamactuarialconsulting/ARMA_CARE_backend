@@ -3,7 +3,6 @@ package com.armacare.service;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.any;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -52,9 +51,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         Professional professional2 = new Professional(
                 "Fatima",
@@ -66,13 +65,13 @@ public class ProfessionalServiceTest {
                 "12 Thiaroye",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION",
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION",
+                "En attente de vérification des documents",
                 "2023-02-01T16:01:00",
                 "path/to/identity/document2",
-                "path/to/diploma2",
                 "path/to/license2",
                 "path/to/professional/insurance2",
+                "path/to/diploma2",
                 "path/to/bank/account/number2");
 
         when(professionalRepository.findAll()).thenReturn(List.of(professional1, professional2));
@@ -98,9 +97,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
 
         when(professionalRepository.findById(1L)).thenReturn(Optional.of(professional));
@@ -124,9 +123,9 @@ public class ProfessionalServiceTest {
                 "Dakar",
                 "Sénégal",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         
         // Création d'un objet Professional attendu après la sauvegarde
@@ -187,9 +186,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         existingProfessional.setId(1L); // Définir un ID
         
@@ -205,9 +204,9 @@ public class ProfessionalServiceTest {
             "Dakar",
             "Sénégal",
             "path/to/identity/document1",
-            "path/to/diploma1",
             "path/to/license1",
             "path/to/professional/insurance1",
+            "path/to/diploma1",
             "path/to/bank/account/number1");
 
         // Professionnel mis à jour attendu
@@ -225,9 +224,9 @@ public class ProfessionalServiceTest {
             "Documents validés",
             "2023-01-01T16:00:00",
             "path/to/identity/document1",
-            "path/to/diploma1",
             "path/to/license1",
             "path/to/professional/insurance1",
+            "path/to/diploma1",
             "path/to/bank/account/number1");
         updatedProfessional.setId(1L); // Même ID que l'existant
         
@@ -266,9 +265,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         
         when(professionalRepository.findByEmail("saliou.diop@example.com")).thenReturn(Optional.of(professional));
@@ -295,9 +294,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         when(professionalRepository.findByPhone("+221772345678")).thenReturn(Optional.of(professional));
 
@@ -323,9 +322,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         when(professionalRepository.findByRegistrationNumber("123456789")).thenReturn(Optional.of(professional));
 
@@ -351,9 +350,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         Professional professional2 = new Professional(
                 "Fatima",
@@ -365,13 +364,13 @@ public class ProfessionalServiceTest {
                 "12 Thiaroye",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION",
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION",
+                "En attente de vérification des documents",
                 "2023-02-01T16:01:00",
                 "path/to/identity/document2",
-                "path/to/diploma2",
                 "path/to/license2",
                 "path/to/professional/insurance2",
+                "path/to/diploma2",
                 "path/to/bank/account/number2");
         
         when(professionalRepository.findBySpeciality("Medecin Chirurgien")).thenReturn(List.of(professional1, professional2));
@@ -398,9 +397,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         Professional professional2 = new Professional(
                 "Fatima",
@@ -412,13 +411,13 @@ public class ProfessionalServiceTest {
                 "12 Thiaroye",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION",
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION",
+                "En attente de vérification des documents",
                 "2023-02-01T16:01:00",
                 "path/to/identity/document2",
-                "path/to/diploma2",
                 "path/to/license2",
                 "path/to/professional/insurance2",
+                "path/to/diploma2",
                 "path/to/bank/account/number2");
         
         when(professionalRepository.findByCity("Dakar")).thenReturn(List.of(professional1, professional2));
@@ -441,13 +440,13 @@ public class ProfessionalServiceTest {
                 "123 Keur Massar",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION",
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION",
+                "En attente de vérification des documents",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         Professional professional2 = new Professional(
                 "Fatima",
@@ -459,18 +458,18 @@ public class ProfessionalServiceTest {
                 "12 Thiaroye",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION",
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION",
+                "En attente de vérification des documents",
                 "2023-02-01T16:01:00",
                 "path/to/identity/document2",
-                "path/to/diploma2",
                 "path/to/license2",
                 "path/to/professional/insurance2",
+                "path/to/diploma2",
                 "path/to/bank/account/number2");
         
-        when(professionalRepository.findByAccountStatus(AccountStatus.PENDING_ACTIVATION)).thenReturn(List.of(professional1, professional2));
+        when(professionalRepository.findByAccountStatus(AccountStatus.PENDING_VERIFICATION)).thenReturn(List.of(professional1, professional2));
         
-        List<Professional> result = professionalService.findByAccountStatus(AccountStatus.PENDING_ACTIVATION);
+        List<Professional> result = professionalService.findByAccountStatus(AccountStatus.PENDING_VERIFICATION);
         
         assertThat(result).isNotNull();
         assertThat(result).hasSize(2).containsExactly(professional1, professional2);
@@ -493,9 +492,9 @@ public class ProfessionalServiceTest {
                 "Documents validés",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         professional.setId(1L);
         
@@ -545,13 +544,13 @@ public class ProfessionalServiceTest {
                 "123 Keur Massar",
                 "Dakar",
                 "Sénégal",
-                "PENDING_ACTIVATION", // Statut initial en attente d'activation
-                "Documents vérifiés et en attente d'activation",
+                "PENDING_VERIFICATION", // Statut initial en attente d'activation
+                "En attente de vérification des documents",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         professional.setId(1L);
         
@@ -595,9 +594,9 @@ public class ProfessionalServiceTest {
                 "Compte activé",
                 "2023-01-01T16:00:00",
                 "path/to/identity/document1",
-                "path/to/diploma1",
                 "path/to/license1",
                 "path/to/professional/insurance1",
+                "path/to/diploma1",
                 "path/to/bank/account/number1");
         professional.setId(1L);
         

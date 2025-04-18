@@ -1,6 +1,7 @@
 package com.armacare.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.armacare.model.Professional;
 import com.armacare.model.Professional.AccountStatus;
@@ -50,7 +51,38 @@ public class ProfessionalController {
             return ResponseEntity.notFound().build();
         }
     }
+    // Récupérer un professionnel par son Email
+    @GetMapping("/by-email")
+    public ResponseEntity<Professional> getProfessionalByEmail(@RequestParam String email) {
+        try {
+            Optional<Professional> professional = professionalService.findByEmail(email);
+            return ResponseEntity.ok(professional.get());
+        } catch (ProfessionalNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
+    // Récupérer un professionnel par son téléphone
+    @GetMapping("/by-phone")
+    public ResponseEntity<Professional> getProfessionalByPhone(@RequestParam String phone) {
+        try {
+            Optional<Professional> professional = professionalService.findByPhone(phone);
+            return ResponseEntity.ok(professional.get());
+        } catch (ProfessionalNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Récupérer un professionnel par son numéro de registration
+    @GetMapping("/by-registration-number")
+    public ResponseEntity<Professional> getProfessionalByRegistrationNumber(@RequestParam String registrationNumber) {
+        try {
+            Optional<Professional> professional = professionalService.findByRegistrationNumber(registrationNumber);
+            return ResponseEntity.ok(professional.get());
+        } catch (ProfessionalNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
     // Créer un professionnel
     @PostMapping
     public ResponseEntity<Professional> createProfessional(@Valid @RequestBody ProfessionalDto professionalDto) {

@@ -49,7 +49,7 @@ INSERT INTO professionals (
     'Fatima', 'Diop', 'Medecin gynécologiste', 
     '7773456789', 'fatima.diop@example.com', '762345679', 
     '12 Thiaroye', 'Dakar', 'Sénégal', 
-    'PENDING_ACTIVATION', TIMESTAMP '2023-02-01 16:01:00', 'Documents vérifiés et en attente d''activation', 
+    'PENDING_VERIFICATION', TIMESTAMP '2023-02-01 16:01:00', 'En attente de vérification des documents', 
     'path/to/identity/document2', 'path/to/diploma2', 'path/to/license2',
     'path/to/professional/insurance2', 'path/to/bank/account/number2'
 );
@@ -64,7 +64,7 @@ INSERT INTO professionals (
     'Saidou', 'Ly', 'Medecin pédiatride', 
     '99123456789', 'saidou.ly@example.com', '702345699', 
     '14 Gareba', 'Thiès', 'Sénégal', 
-    'PENDING_VERIFICATION', TIMESTAMP '2023-03-01 16:02:00', 'Documents en attente de vérification', 
+    'PENDING_VERIFICATION', TIMESTAMP '2023-03-01 16:02:00', 'En attente de vérification des documents', 
     'path/to/identity/document3', 'path/to/diploma3', 'path/to/license3',
     'path/to/professional/insurance3', 'path/to/bank/account/number3'
 );
