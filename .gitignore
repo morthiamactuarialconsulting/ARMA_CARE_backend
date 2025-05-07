@@ -34,3 +34,10 @@ build/
 
 ### MySQL ###
 .env
+
+### docs ###
+ADMIN.md
+DATA_MODEL_REFERENCE.md
+DEVBOOK.md
+GUIDE_ADMIN.md
+THIRD_PARTY_PAYEMENT.md
